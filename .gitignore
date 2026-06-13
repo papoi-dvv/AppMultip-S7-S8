@@ -7,78 +7,74 @@
 .atom/
 .build/
 .buildlog/
-.history
+.history/
 .svn/
 .swiftpm/
 migrate_working_dir/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins-dependencies
-.pub-cache/
-.pub/
-/build/
-/coverage/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-# Archivos de Flutter/Dart
+# Dart / Flutter / Pub
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
-/build/
+build/
+coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
 
-# Archivos de Android
+# Symbolication / obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android
 .gradle/
 local.properties
-*.kwks
+captures/
 *.keystore
 *.jks
-captures/
+*.kwks
+/android/app/debug
+/android/app/profile
+/android/app/release
 
-# Archivos de iOS
-*.swp
-*.lock
+# iOS
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/DerivedData/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
 *.mode1v3
 *.mode2v3
 *.perspectivev3
-/ios/Flutter/Generated.xcconfig
-/ios/Flutter/flutter_export_environment.sh
-/ios/Flutter/App.framework
-/ios/Flutter/Flutter.framework
-/ios/Flutter/Flutter.podspec
-/ios/DerivedData/
+*.xcuserstate
+xcuserdata/
 
-# Archivos de IDE (VS Code, IntelliJ)
+# macOS
+macos/Flutter/ephemeral/
+macos/Pods/
+macos/.symlinks/
+macos/DerivedData/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+
+# Web
+web/.dart_tool/
+
+# IDEs
 .idea/
-.vscode/
 *.iml
+*.ipr
 *.iws
-.history
 
-# Otros
-.DS_Store
+# VS Code can contain useful launch/tasks config. Uncomment to ignore it.
+# .vscode/

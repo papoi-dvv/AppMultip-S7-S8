@@ -1,51 +1,56 @@
-# 🚀 Flutter People Manager - V2
+# Flutter People Manager - V2
 
-Una aplicación de gestión de personas desarrollada en Flutter, enfocada en la navegación fluida, validación de formularios y manejo de estados globales temporales.
+Aplicacion Flutter de gestion de personas desarrollada para el Laboratorio de la Semana 9. La interfaz fue migrada a componentes nativos de Cupertino para ofrecer una experiencia visual inspirada en iOS, con una identidad Sakura/Washi minimalista centralizada en `lib/styles.dart`.
 
-## ✨ Características
+## Caracteristicas
 
-* **Login Seguro:** Validación de campos obligatorios para el acceso.
-* **Menú Dinámico:** Navegación organizada mediante rutas nombradas.
-* **Registro Pro:** Formulario de 5 campos con validaciones en tiempo real.
-* **Listado en Memoria:** Visualización de registros almacenados en un array dinámico.
-* **Perfil de Usuario:** Muestra el correo de sesión y la marca de tiempo exacta (fecha y hora) del último acceso.
-* **Cerrar Sesión:** Limpieza de historial de navegación para mayor seguridad.
+- **Login seguro:** validacion de correo y contrasena antes del acceso.
+- **UI Cupertino:** uso de `CupertinoApp`, `CupertinoPageScaffold`, `CupertinoNavigationBar`, `CupertinoFormSection`, `CupertinoTextFormFieldRow`, `CupertinoButton`, `CupertinoListSection` y `CupertinoListTile`.
+- **Menu principal:** navegacion por rutas nombradas hacia registro, lista y perfil.
+- **Registro de personas:** formulario con nombre, edad, usuario, DNI, telefono y fecha de nacimiento mediante `CupertinoDatePicker`.
+- **Listado en memoria:** personas almacenadas temporalmente en `AppData.personasRegistradas`.
+- **Detalle de usuario:** vista individual con edad, DNI, telefono y fecha de nacimiento.
+- **Edicion de usuarios:** cada persona registrada puede actualizarse desde su pantalla de detalle.
+- **Perfil propio editable:** permite modificar el nombre de usuario y correo de la sesion.
+- **Marca de tiempo:** conserva fecha y hora del ultimo acceso.
+- **Cerrar sesion:** vuelve al login reemplazando la ruta actual.
 
-## 🛠️ Estructura del Proyecto
+## Estructura del Proyecto
 
-El código está organizado para ser escalable y fácil de leer:
-* `lib/main.dart`: Contiene la lógica de las pantallas, navegación y el estado global (`AppData`).
-* `lib/styles.dart`: Centraliza la identidad visual (colores, decoraciones de inputs y botones), funcionando como un "CSS" para Flutter.
+- `lib/main.dart`: contiene las pantallas, rutas, estado global temporal (`AppData`), modelo `Person`, registro, detalle, edicion y perfil.
+- `lib/styles.dart`: centraliza paleta Sakura, tema `CupertinoThemeData`, tipografias, decoraciones, botones e iconografia de la aplicacion.
+- `pubspec.yaml`: configuracion base del proyecto Flutter.
+- `test/`: pruebas generadas por la plantilla de Flutter.
 
-## 🚀 Instalación y Uso
+## Flujo de Pantallas
 
-1.  **Clona el repositorio:**
-    ```bash
-    git clone [https://github.com/papoi-dvv/tu-repositorio.git](https://github.com/papoi-dvv/tu-repositorio.git)
-    ```
-2.  **Obtén las dependencias:**
-    ```bash
-    flutter pub get
-    ```
-3.  **Corre la aplicación:**
-    ```bash
-    flutter run
-    ```
+1. **Acceso:** login con validacion obligatoria y estilo iOS.
+2. **Menu:** accesos a registro, lista y perfil.
+3. **Registro:** formulario Cupertino con selector de fecha de nacimiento.
+4. **Lista:** muestra todas las personas registradas en memoria.
+5. **Detalle:** permite revisar informacion completa de cada persona.
+6. **Edicion:** permite actualizar personas ya registradas.
+7. **Perfil:** muestra y edita los datos del usuario de sesion.
 
-## 📸 Pantallas
-* **Acceso:** Pantalla de Login con icono de seguridad.
-* **Panel:** Grid de opciones interactivas.
-* **Formulario:** Captura de datos con feedback de error.
-* **Lista:** Vista limpia de las personas registradas.
+## Instalacion y Uso
 
----
+```bash
+flutter pub get
+flutter run
+```
 
-## 🤝 Créditos
+Para analizar el proyecto:
 
-Este proyecto fue desarrollado con sudor, cafeína y mucho código por:
+```bash
+flutter analyze
+```
 
-* **Lead Developer:** [papoi-dvv](https://github.com/papoi-dvv) 👨‍💻
-* **AI Sidekick:** **G-Flow** (Tu colaborador de confianza) 🤖✨
+## Notas Tecnicas
 
----
-*Hecho con ❤️ para la comunidad de Flutter.*
+- La persistencia es temporal en memoria; los datos se reinician al cerrar la app.
+- El proyecto evita widgets Material en `lib/main.dart` para mantener compatibilidad con la estetica Cupertino.
+- Los estilos visuales se consumen desde `AppStyles`, `AppColors`, `AppTextStyles`, `AppDecorations` y clases auxiliares definidas en `lib/styles.dart`.
+
+## Creditos
+
+Desarrollado por **papoi-dvv** con apoyo de **Codex** como colaborador tecnico.
